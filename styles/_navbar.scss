@@ -1,0 +1,47 @@
+@use './buttons';
+@use './utils';
+
+.navbar {
+    @include utils.center(space-between);
+    padding: 20px;
+}
+
+.navbar__group {
+    @include utils.center();
+    gap: 20px;
+
+    >img{
+        width: 120px;
+    }
+}
+
+.navbar__links {
+    @include utils.center;
+    list-style: none;
+    gap: 20px;
+    margin-left: 60px;
+
+    @media (max-width:998px) {
+        display: none;
+    }
+}
+
+.navbar__cta {
+    @include buttons.base;
+
+    @media (max-width:998px) {
+        display: none;
+    }
+}
+
+.navbar__cta:nth-of-type(2) {
+    @include buttons.secondary;
+}
+
+.navbar__menu {
+    display: none;
+
+    @media (max-width:998px) {
+        display: block;
+    }
+}

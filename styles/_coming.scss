@@ -1,0 +1,83 @@
+@use './utils';
+@use './variables' as colors;
+@use './buttons';
+
+.coming {
+    @include utils.center(center, start);
+    padding: 60px;
+    gap: 60px;
+    margin-top: 80px;
+
+    @media (max-width:998px) {
+        padding: 16px;
+        flex-direction: column;
+      
+
+    }
+}
+
+.coming__title {
+    @include utils.center;
+    gap: 16px;
+    font-size: 2rem;
+    font-weight: 700;
+
+    img {
+        width: 32px;
+    }
+}
+
+.coming__content {
+    width: 100%;
+    @include utils.center(center, start);
+    flex-direction: column;
+    gap: 16px;
+
+    button {
+        @include buttons.secondary
+    }
+}
+
+.coming__description {
+
+    @include utils.center(start, start);
+    gap: 12px;
+    flex-direction: column;
+
+    p {
+        font-size: 14px;
+
+    }
+
+    .coming__description__bold {
+        font-weight: 600;
+    }
+
+    .coming__description__light {
+        font-weight: 200;
+    }
+}
+
+
+
+.coming__visual {
+    width: 100%;
+    min-height: 300px;
+    align-self: stretch;
+    background-color: colors.$blue_1;
+    border-radius: 16px;
+    position: relative;
+
+
+    img {
+        width: 100%;
+        position: absolute;
+        bottom: 0;
+        left: -60px;
+    }
+
+    @media (max-width:998px) {
+        width: 90%;
+        align-self: flex-end;
+    }
+}

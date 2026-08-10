@@ -1,0 +1,66 @@
+@use './variables' as colors;
+@use './buttons' as buttons;
+
+.hero {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    min-height: 100vh;
+
+
+    img {
+        width: 720px;
+    }
+
+    @media (max-width:998px) {
+        flex-direction: column;
+
+        img {
+            width: 100%;
+        }
+
+        justify-content: center;
+        margin-top: 42px;
+    }
+}
+
+.hero__group {
+    display: flex;
+    flex-direction: column;
+    padding-left: 60px;
+    gap: 16px;
+
+    span {
+
+        background:
+            linear-gradient(0deg, #2B3087 0%, #00B4EC 81.99%);
+        -webkit-background-clip: text;
+        background-clip: text;
+        -webkit-text-fill-color: transparent;
+        color: transparent;
+
+        font-weight: 700;
+    }
+
+    h1 {
+        font-size: 40px;
+        font-weight: 700;
+        line-height: .95;
+    }
+
+    p {
+        font-size: 16px;
+        color: #DDE2FF;
+        font-weight: 200;
+    }
+
+    button {
+        @include buttons.base(colors.$green_1);
+        width: fit-content;
+        margin-top: 30px;
+    }
+
+    @media (max-width:998px) {
+        padding: 16px;
+    }
+}

@@ -1,0 +1,21 @@
+@use './variables' as colors2;
+
+@mixin base($bg_color:transparent) {
+    padding: 10px 16px;
+    border-radius: 40px;
+    border: 0;
+    background: $bg_color;
+    color: colors2.$primary_text;
+    font-size: 12px
+}
+
+@mixin primary {
+    @include base;
+  
+}
+
+@mixin secondary {
+    @include base;
+    border: 1px solid colors2.$green_1;
+}
+

@@ -1,0 +1,104 @@
+@use './utils';
+@use './variables' as colors;
+
+.presale {
+
+    @include utils.center(center, center);
+    flex-direction: column;
+    gap: 24px;
+    background-image: url('../assests/mask_group_2.svg');
+    background-size: cover;
+    min-height: 900px;
+    padding: 0 60px;
+
+    @media (max-width:998px) {
+        padding: 16px;
+    }
+}
+
+.presale__title {
+    font-weight: 700;
+    font-size: 40px;
+    margin-top: 32px;
+
+    @media (max-width:998px) {
+        font-size: 32px;
+    }
+}
+
+.presale {
+    >div {
+        @include utils.center(center, center);
+        gap: 24px;
+        width: 100%;
+
+        @media (max-width:998px) {
+            flex-direction: column;
+
+        }
+    }
+
+}
+
+@mixin presaleCard($numberColor) {
+    @include utils.center();
+    flex-direction: column;
+    gap: 40px;
+    text-align: center;
+    background-color: white;
+    color: colors.$blue_4;
+    width: 100%;
+    min-height: 450px;
+    padding: 40px;
+    border-radius: 16px;
+
+    .presale__card__number {
+        @include utils.bubble($numberColor)
+    }
+}
+
+
+.presale__card__group {
+    @include utils.center();
+    flex-direction: column;
+    gap: 16px;
+
+    .presale__card__phase {
+        font-size: 20px;
+    }
+
+    p {
+        font-weight: 900;
+        font-size: 16px;
+
+        span {
+            font-weight: 200;
+            font-size: 16px;
+        }
+    }
+
+    span {
+        font-weight: 500;
+        font-size: 14px;
+    }
+
+
+}
+
+.presale__card__1 {
+    @include presaleCard(colors.$green_1)
+}
+
+.presale__card__2 {
+
+    @include presaleCard(colors.$blue_2);
+    position: relative;
+    top: 48px;
+     @media (max-width:998px) {
+        top: 0;
+     }
+}
+
+.presale__card__3 {
+    @include presaleCard(colors.$yellow_1)
+}

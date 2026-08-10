@@ -1,0 +1,19 @@
+@use './variables' as colors;
+
+@mixin center($justifyContent: center, $alignItems: center) {
+    display: flex;
+    justify-content: $justifyContent;
+    align-items: $alignItems;
+}
+
+@mixin bubble ($bubbleColor) {
+    color: colors.$blue_3;
+    height: 48px;
+    width: 48px;
+    background: $bubbleColor;
+    border-radius: 40px;
+    border-bottom-left-radius: 10px;
+    font-weight: 700;
+    font-size: 16px;
+    @include center();
+}

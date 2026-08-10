@@ -1,0 +1,75 @@
+@use './utils';
+@use './variables' as colors;
+
+.timeline {
+    margin-top: 80px;
+    display: flex;
+    padding: 0 60px;
+    @include utils.center(space-between, start);
+    gap: 24px;
+      @media (max-width:998px) {
+        padding: 16px;
+        flex-direction: column;
+        gap: 40px;
+    }
+}
+
+@mixin timelineItem($timelineColor) {
+    @include utils.center(start, start);
+    flex-direction: column;
+    gap: 20px;
+
+    .timeline__header {
+        @include utils.center(start, end);
+        gap: 4px
+    }
+
+    .timeline__quarter {
+    @include utils.bubble($timelineColor)
+
+    }
+
+    .timeline__list {
+        list-style: none;
+        @include utils.center(start, start);
+        flex-direction: column;
+        gap: 16px;
+
+        li {
+            @include utils.center(start, start);
+
+            span {
+                color: $timelineColor;
+                margin-right: 14px;
+                font-weight: 600;
+                font-size: 14px;
+               
+
+            }
+
+            p {
+                font-weight: 300;
+                font-size: 14px;
+                 @media (max-width:998px) {
+                    font-size: 16px;
+                }
+            }
+        }
+    }
+}
+
+.timeline__item_1 {
+    @include timelineItem(colors.$green_1)
+}
+
+.timeline__item_2 {
+    @include timelineItem(colors.$blue_2)
+}
+
+.timeline__item_3 {
+    @include timelineItem(colors.$yellow_1)
+}
+
+.timeline__item_4 {
+    @include timelineItem(colors.$red_1)
+}

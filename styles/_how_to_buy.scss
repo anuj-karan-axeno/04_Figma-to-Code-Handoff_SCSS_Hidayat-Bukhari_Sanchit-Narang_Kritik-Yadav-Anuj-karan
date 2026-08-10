@@ -1,0 +1,57 @@
+@use './utils';
+@use './variables' as colors;
+
+.how_to_buy {
+    @include utils.center;
+    padding: 0 60px;
+    gap: 24px;
+    margin-bottom: 80px;
+    
+      @media (max-width:998px) {
+        padding: 16px;
+        flex-direction: column;
+        gap: 20px;
+    }
+
+}
+
+.how_to_buy__card {
+    @include utils.center;
+    border-radius: 16px;
+    background-color: colors.$blue_1;
+    padding: 40px;
+    min-height: 160px;
+    
+    position: relative;
+
+    &:nth-child(2){
+        top: 24px
+    }
+    @media (max-width:998px) {
+         &:nth-child(2){
+        top:0px
+    }
+    }
+}
+
+.how_to_buy__connector {
+    
+    
+        @include utils.center;
+        position: absolute;
+        right: -42px;
+        bottom: 10px;
+        background: black;
+        height: 54px;
+        width: 54px;
+        border-radius: 100%;
+        z-index: 2;
+        
+        @media (max-width:998px) {
+            right: 0;
+            left: 45%;
+            bottom: -32px;
+            transform: rotate(90deg);
+        }
+    
+}

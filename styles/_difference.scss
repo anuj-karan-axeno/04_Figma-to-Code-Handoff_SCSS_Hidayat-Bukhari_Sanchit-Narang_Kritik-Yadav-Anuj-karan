@@ -1,0 +1,66 @@
+@use './utils';
+@use './variables' as colors;
+
+.difference {
+    @include utils.center;
+    margin-top: 80px;
+
+    @media (max-width:998px) {
+
+        flex-direction: column;
+        width: 100%;
+    }
+
+}
+
+.difference__group__1 {
+    width: 50%;
+
+    @media (max-width:998px) {
+
+
+        width: 100%;
+    }
+
+}
+
+.difference__group__2 {
+    @include utils.center(start,start);
+    flex-direction: column;
+    color: colors.$blue_1;
+    flex: 1;
+    background: white;
+    align-self: stretch;
+    width: 100%;
+    border-top-left-radius: 50%;
+    gap: 20px;
+    padding: 80px;
+    @media (max-width:998px) {
+         border-top-left-radius: 40%;
+         padding: 100px 24px;
+         text-align: left;
+      
+        
+       
+    }
+
+
+}
+
+.difference__question {
+    font-size: 32px;
+    font-weight: 700;
+     @media (max-width:998px) {
+        font-size: 24px;}
+}
+
+.difference__answer_1 {
+    font-size: 14px;
+    font-weight: 700;
+}
+
+.difference__answer_2,
+.difference__answer_3 {
+    font-size: 14px;
+    font-weight: 200;
+}
