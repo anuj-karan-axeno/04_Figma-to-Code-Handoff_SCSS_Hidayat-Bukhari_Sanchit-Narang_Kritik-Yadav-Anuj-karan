@@ -1,0 +1,28 @@
+@use './variables' as colors;
+
+.image_demo {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    margin: 0 60px;
+    border-radius: 16px;
+    @media (max-width: 998px) {
+        margin: 0 16px 60px;
+        padding: 24px;
+    }
+}
+
+.image_demo__image {
+    display: block;
+    width: 100%;
+    max-height: 560px;
+    object-fit: contain;
+    border-radius: 8px;
+    background: colors.$blue_3;
+}
+
+.image_demo__caption {
+    margin-top: 12px;
+    color: #DDE2FF;
+    line-height: 1.5;
+}

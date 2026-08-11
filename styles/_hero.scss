@@ -1,10 +1,9 @@
 @use './variables' as colors;
 @use './buttons' as buttons;
+@use './utils';
 
 .hero {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
+  @include utils.center();
     min-height: 100vh;
 
 
@@ -22,6 +21,7 @@
         justify-content: center;
         margin-top: 42px;
     }
+    
 }
 
 .hero__group {
@@ -58,6 +58,9 @@
         @include buttons.base(colors.$green_1);
         width: fit-content;
         margin-top: 30px;
+        a{
+          @include utils.anchor()
+        }
     }
 
     @media (max-width:998px) {

@@ -20,6 +20,10 @@
     list-style: none;
     gap: 20px;
     margin-left: 60px;
+    a{
+        color: whitesmoke;
+        text-decoration: none;
+    }
 
     @media (max-width:998px) {
         display: none;
@@ -28,6 +32,11 @@
 
 .navbar__cta {
     @include buttons.base;
+
+    a{
+        text-decoration: none;
+
+    }
 
     @media (max-width:998px) {
         display: none;
@@ -38,10 +47,23 @@
     @include buttons.secondary;
 }
 
+.navbar__wallet-trigger {
+    @media (max-width:998px) {
+        display: block;
+    }
+}
+
 .navbar__menu {
+    
     display: none;
 
     @media (max-width:998px) {
         display: block;
+    }
+
+    button{
+        background: transparent;
+        outline: 0;
+        border: 0;
     }
 }

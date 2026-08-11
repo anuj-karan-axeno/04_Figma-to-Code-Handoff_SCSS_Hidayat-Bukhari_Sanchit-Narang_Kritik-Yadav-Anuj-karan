@@ -1,0 +1,46 @@
+@use './variables' as colors;
+@use './buttons';
+
+.modal__trigger {
+    @include buttons.base(colors.$green_1);
+    display: block;
+    margin: 0 auto 24px;
+    cursor: pointer;
+}
+
+.modal {
+    border: 0;
+    border-radius: 16px;
+    padding: 40px;
+    width: min(90vw, 420px);
+    background: white;
+    color: colors.$blue_4;
+    margin: auto;
+}
+
+.modal__title {
+    font-size: 28px;
+    margin-bottom: 12px;
+}
+
+.modal__description {
+    margin-bottom: 24px;
+}
+
+.modal__form {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.modal__button {
+    @include buttons.base(colors.$green_1);
+    width: 100%;
+    cursor: pointer;
+
+    &:last-child {
+        background: transparent;
+        border: 1px solid colors.$blue_4;
+        color: colors.$blue_4;
+    }
+}

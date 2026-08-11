@@ -32,6 +32,9 @@
     li {
         list-style: none;
         text-decoration: underline;
+        a{
+            @include utils.anchor()
+        }
     }
 
     @media (max-width:998px) {
